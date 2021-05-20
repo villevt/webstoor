@@ -11,7 +11,7 @@ ReactDOM.render(
     <div className="overflow-hidden min-vh-100">
       <Container fluid>
         <Logo className="d-block mx-auto my-5 w-25"/>
-        <h1 className="text-center display-4">What should you buy today?</h1>
+        <h1 className="text-center display-4">Stoorming with the best deals! </h1>
       </Container>
     </div>
   </React.StrictMode>,
