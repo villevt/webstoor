@@ -10,6 +10,7 @@ const ContainerDiv = styled.div`
   background: #fff;
   color: ${Colors.get("Main")};
   display: flex;
+  font-family: 'Gothic A1', sans-serif;
   flex-direction: column;
   gap: 2em;
 `;

@@ -48,7 +48,7 @@ export const Header = (props: HeaderProps) => {
             </HeaderMid>
             <HeaderSide>
                 <AdminButton>
-                    admin
+                    Admin
                 </AdminButton>
             </HeaderSide>
         </StyledHeader>
