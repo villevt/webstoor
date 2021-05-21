@@ -7,7 +7,7 @@ import {Colors} from './styles';
 import styled from 'styled-components';
 
 const ContainerDiv = styled.div`
-  background: #fff;
+  background-image: linear-gradient(${Colors.get("Light")}, #fff);
   color: ${Colors.get("Main")};
   display: flex;
   font-family: 'Gothic A1', sans-serif;

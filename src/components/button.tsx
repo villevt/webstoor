@@ -9,12 +9,13 @@ interface ButtonProps {
 }
 
 const StyledButton = styled.button`
-    background: none;
-    border: none;
-    border-bottom: 2px solid ${Colors.get("Main")};
+    border: 2px solid ${Colors.get("Main")};
+    border-top: none;
+    border-left: none;
+    border-radius: 100px;
     color: ${Colors.get("Main")};
     height: 2em;
-    font-weight: 600;
+    font-weight: 700;
 `;
 
 export const Button = (props: ButtonProps) => {
