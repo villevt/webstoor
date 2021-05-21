@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Header} from "./components/header";
+import {InfoPanel} from "./components/infopanel";
 
 import {Colors} from './styles';
 import styled from 'styled-components';
@@ -13,18 +14,27 @@ const ContainerDiv = styled.div`
   font-family: 'Gothic A1', sans-serif;
   flex-direction: column;
   gap: 2em;
+  min-height: 100vh;
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-grow: 1;
+  padding: 1rem 3rem 1rem 3rem;
+  margin: auto;
 `;
 
 const RecommendedProducts = styled.div`
-  min-height: 10em;
-  min-width: 100vw;
 `;
 
 ReactDOM.render(
   <React.StrictMode>
     <ContainerDiv>
         <Header />
-        <RecommendedProducts />
+        <Main>
+          <InfoPanel />
+          <RecommendedProducts />
+        </Main>
     </ContainerDiv>
   </React.StrictMode>,
   document.getElementById('root')

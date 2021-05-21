@@ -1,7 +1,6 @@
 import {Button} from "./button";
 import {Logo} from "./logo";
 
-import {Colors} from "../styles";
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
