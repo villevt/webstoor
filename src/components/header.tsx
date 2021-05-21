@@ -10,16 +10,29 @@ const StyledHeader = styled.div`
   display: flex;
   gap: 1em;
   justify-content: center;
-`
+  height: clamp(3rem, 12vh, 7.5rem);
+`;
+
+const HeaderSide = styled.div`
+    width: 40%;
+`;
+
+const HeaderMid = styled.div`
+    width: 20%;
+`;
 
 const StyledLogo = styled(Logo)`
   height: clamp(1rem, 4vh, 2.5rem);
-  margin-bottom: 2em;
-  margin-top: 2em;
+  margin: auto; 
+  width: 100%;
 `;
 
 const AdminButton = styled(Button)`
+  display: block;
   justify-self: flex-end;
+  margin-left: auto;
+  margin-right: 3em;
+  font-size: 1.2em;
 `;
 
 interface HeaderProps {
@@ -29,10 +42,15 @@ interface HeaderProps {
 export const Header = (props: HeaderProps) => {
     return(
         <StyledHeader>
-            <StyledLogo />
-            <AdminButton>
-                Admin
-            </AdminButton>
+            <HeaderSide />
+            <HeaderMid>
+                <StyledLogo />
+            </HeaderMid>
+            <HeaderSide>
+                <AdminButton>
+                    admin
+                </AdminButton>
+            </HeaderSide>
         </StyledHeader>
     )
 }

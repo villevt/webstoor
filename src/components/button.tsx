@@ -10,10 +10,11 @@ interface ButtonProps {
 
 const StyledButton = styled.button`
     background: none;
-    border: 2px solid ${Colors.get("Main")};
-    border-radius: 100px;
+    border: none;
+    border-bottom: 2px solid ${Colors.get("Main")};
     color: ${Colors.get("Main")};
     height: 2em;
+    font-weight: 600;
 `;
 
 export const Button = (props: ButtonProps) => {
