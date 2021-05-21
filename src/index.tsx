@@ -8,7 +8,7 @@ import './custom.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="bg-primary overflow-hidden min-vh-100">
+    <div className="bg-secondary text-primary overflow-hidden min-vh-100">
       <Container fluid>
         <Logo className="d-block mx-auto my-5 w-25"/>
         <h1 className="text-center">Stoorming with the best deals!</h1>
