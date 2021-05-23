@@ -15,7 +15,7 @@ const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
     padding: 1em;
-    width: 30em;
+    width: 30rem;
     gap: 2em;
 `;
 
@@ -29,9 +29,22 @@ const StyledInput = styled.input`
     border: none;
     border-bottom: 2px solid ${Colors.get("Main")};
     padding: 0.2em 0.5em;
-    &:focus {
+    font-size: 1em;
+    width: 18rem;
+    :focus {
         outline: none;
         box-shadow: 0px 0px 4px ${Colors.get("Main")};
+    }
+    ::placeholder {
+        color: ${Colors.get("Main")};
+    }
+`;
+
+// Fix for Firefox improperly displaying password field
+const StyledPassword = styled(StyledInput)`
+    font-family: sans;
+    :placeholder-shown {
+        font-family: inherit;
     }
 `;
 
@@ -57,11 +70,13 @@ export const InfoPanel = (props: InfoPanelProps) => {
     return(
         <StyledForm>
             <b>Register / Login</b>
-            <StyledInput type="text" name="uname" placeholder="Username"/>
-            <StyledInput type="text" name="uname" placeholder="Password"/>
+            <StyledInput type="text" name="username" placeholder="Username"/>
+            <StyledPassword type="password" name="new-password" placeholder="Password"/>
             <FormRow>
                 <StyledInputSubmit type="submit" value="Register" />
                 <StyledInputSubmit type="submit" value="Login" />
+            </FormRow>
+            <FormRow>
             </FormRow>
         </StyledForm>
     );
