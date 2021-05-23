@@ -16,12 +16,12 @@ const StyledForm = styled.form`
     flex-direction: column;
     padding: 1em;
     width: 30rem;
-    gap: 2em;
+    gap: 1em;
 `;
 
-const StyledLabel = styled.label`
-    display: block;
-`;
+const StyledB = styled.b`
+    margin-top: 2em;
+`
 
 const StyledInput = styled.input`
     display: block;
@@ -54,7 +54,7 @@ const StyledInputSubmit = styled.input`
     color: ${Colors.get("Main")};
     border: 2px solid ${Colors.get("Main")};
     padding: 0.2em 0.5em;
-    width: 8em;
+    width: 6em;
     &:focus {
         outline: none;
         box-shadow: 0px 0px 4px ${Colors.get("Main")};
@@ -69,15 +69,15 @@ const FormRow = styled.div`
 export const InfoPanel = (props: InfoPanelProps) => {
     return(
         <StyledForm>
-            <b>Register / Login</b>
+            <StyledB>Already a user?</StyledB>
             <StyledInput type="text" name="username" placeholder="Username"/>
-            <StyledPassword type="password" name="new-password" placeholder="Password"/>
-            <FormRow>
-                <StyledInputSubmit type="submit" value="Register" />
-                <StyledInputSubmit type="submit" value="Login" />
-            </FormRow>
-            <FormRow>
-            </FormRow>
+            <StyledPassword type="password" name="current-password" placeholder="Password"/>
+            <StyledInputSubmit type="submit" value="Login" />
+            <StyledB>New User?</StyledB>
+            <StyledInput type="text" name="username" placeholder="Username"/>
+            <StyledPassword type="password" name="new-password" placeholder="New password (min. 16 characters)"/>
+            <StyledPassword type="password" name="new-password" placeholder="Confirm new password"/>
+            <StyledInputSubmit type="submit" value="Register" />
         </StyledForm>
     );
 }

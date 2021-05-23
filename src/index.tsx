@@ -15,6 +15,7 @@ const ContainerDiv = styled.div`
   flex-direction: column;
   gap: 2em;
   min-height: 100vh;
+  min-width: 100vw;
 `;
 
 const Main = styled.div`
