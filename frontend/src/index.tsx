@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Header} from "./components/header";
-import {InfoPanel} from "./components/infopanel";
+import { ProductCatalog } from './components/ProductCatalog';
 
 import {Colors} from './styles';
 import styled from 'styled-components';
@@ -25,16 +25,12 @@ const Main = styled.div`
   margin: auto;
 `;
 
-const RecommendedProducts = styled.div`
-`;
-
 ReactDOM.render(
   <React.StrictMode>
     <ContainerDiv>
         <Header />
         <Main>
-          <InfoPanel />
-          <RecommendedProducts />
+          <ProductCatalog />
         </Main>
     </ContainerDiv>
   </React.StrictMode>,
