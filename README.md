@@ -2,7 +2,7 @@
 
 WebStoor is a practice project made by me, to practice full-stack application development.
 
-The project will be consist of the following components:
+The project will consist of the following components:
 * Go(lang) backend
 * React (TypeScript) frontend
 * MongoDB as database
