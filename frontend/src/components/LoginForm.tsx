@@ -1,11 +1,10 @@
 import React from 'react';
+import { useState } from 'react';
+
+import userApi from '../requests/user';
 
 import styled from 'styled-components';
 import {Colors} from "../styles";
-
-interface LoginFormProps {
-    className?: string
-}
 
 const StyledForm = styled.form`
     align-items: center;
@@ -13,8 +12,7 @@ const StyledForm = styled.form`
     font-weight: lighter;
     display: flex;
     flex-direction: column;
-    height: 30rem;
-    width: 30rem;
+    padding: 2em;
     gap: 1em;
 `;
 
@@ -60,18 +58,51 @@ const StyledInputSubmit = styled.input`
     }
 `;
 
-export const LoginForm = (props: LoginFormProps) => {
+export const LoginForm = () => {
+    const [newUsername, setNewUsername] = useState("");
+    const [newPassword, setNewPassword] = useState("");
+
+    const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
+        const target = event.currentTarget;
+        const value = target.value;
+        const name = target.name;
+
+        switch (name) {
+            case "new-username": {
+                setNewUsername(value);
+                break;
+            }
+            case "new-password": {
+                setNewPassword(value);
+                break;
+            }
+        }
+    }
+
+    const handleLogin = () => {
+
+    }
+
+    const handleRegister = (event: React.FormEvent) => {
+        userApi.Register(newUsername, newPassword)
+        event.preventDefault();
+    }
+    
     return(
-        <StyledForm>
-            <StyledB>Already a user?</StyledB>
-            <StyledInput type="text" name="username" placeholder="Username"/>
-            <StyledPassword type="password" name="current-password" placeholder="Password"/>
-            <StyledInputSubmit type="submit" value="Login" />
-            <StyledB>New user?</StyledB>
-            <StyledInput type="text" name="username" placeholder="Username"/>
-            <StyledPassword type="password" name="new-password" placeholder="New password (min. 16 characters)"/>
-            <StyledPassword type="password" name="new-password" placeholder="Confirm new password"/>
-            <StyledInputSubmit type="submit" value="Register" />
-        </StyledForm>
+        <div>
+            <StyledForm>
+                <StyledB>Already a user?</StyledB>
+                <StyledInput type="text" name="username" placeholder="Username"/>
+                <StyledPassword type="password" name="current-password" placeholder="Password"/>
+                <StyledInputSubmit type="submit" value="Login" />
+            </StyledForm>
+            <StyledForm onSubmit={handleRegister}>
+                <StyledB>New user?</StyledB>
+                <StyledInput type="text" name="new-username" value={newUsername} onChange={handleInputChange}/>
+                <StyledPassword type="password" name="new-password" value={newPassword} onChange={handleInputChange}/>
+                <StyledPassword type="password" name="new-password-confirm" placeholder="Confirm new password"/>
+                <StyledInputSubmit type="submit" value="Register" />
+            </StyledForm>
+        </div>
     );
 }

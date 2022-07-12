@@ -8,6 +8,7 @@ import (
 func Router() *httprouter.Router {
 	router := httprouter.New()
 	router.GET("/", routes.Test)
+	router.POST("/user/register", routes.UserRegister)
 
 	return router
 }
