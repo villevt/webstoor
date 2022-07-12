@@ -1,25 +1,25 @@
+import React from 'react';
+
 import styled from 'styled-components';
 import {Colors} from "../styles";
 
-interface InfoPanelProps {
+interface LoginFormProps {
     className?: string
 }
 
 const StyledForm = styled.form`
     align-items: center;
     background: ${Colors.get("White")};
-    border: 3px solid ${Colors.get("Main")};
-    border-top: none;
-    border-left: none;
-    border-radius: 10px;
+    font-weight: lighter;
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    height: 30rem;
     width: 30rem;
     gap: 1em;
 `;
 
 const StyledB = styled.b`
+    color: ${Colors.get("Main")};
     margin-top: 2em;
 `
 
@@ -50,7 +50,6 @@ const StyledPassword = styled(StyledInput)`
 
 const StyledInputSubmit = styled.input`
     background: none;
-    border-radius: 50px;
     color: ${Colors.get("Main")};
     border: 2px solid ${Colors.get("Main")};
     padding: 0.2em 0.5em;
@@ -61,19 +60,14 @@ const StyledInputSubmit = styled.input`
     }
 `;
 
-const FormRow = styled.div`
-    display: flex;
-    gap: 1em;
-`
-
-export const InfoPanel = (props: InfoPanelProps) => {
+export const LoginForm = (props: LoginFormProps) => {
     return(
         <StyledForm>
             <StyledB>Already a user?</StyledB>
             <StyledInput type="text" name="username" placeholder="Username"/>
             <StyledPassword type="password" name="current-password" placeholder="Password"/>
             <StyledInputSubmit type="submit" value="Login" />
-            <StyledB>New User?</StyledB>
+            <StyledB>New user?</StyledB>
             <StyledInput type="text" name="username" placeholder="Username"/>
             <StyledPassword type="password" name="new-password" placeholder="New password (min. 16 characters)"/>
             <StyledPassword type="password" name="new-password" placeholder="Confirm new password"/>

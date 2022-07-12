@@ -1,8 +1,13 @@
-import {Button} from "./button";
+import React from "react";
+import { useState } from "react";
+
+import {Button} from "./Button";
 import {Logo} from "./logo";
+import { LoginForm } from "./LoginForm";
 
 import { Colors } from "../styles";
 import styled from 'styled-components';
+import { Modal } from "./Modal";
 
 const StyledHeader = styled.div`
   align-items: center;
@@ -27,19 +32,13 @@ const StyledLogo = styled(Logo)`
   width: 100%;
 `;
 
-const AdminButton = styled(Button)`
-  display: block;
-  justify-self: flex-end;
-  margin-left: auto;
-  margin-right: 3em;
-  font-size: 1.2em;
-`;
-
 interface HeaderProps {
     children?: React.ReactNode
 }
 
 export const Header = (props: HeaderProps) => {
+    const [loginOpen, setLoginOpen] = useState(false);
+
     return(
         <StyledHeader>
             <HeaderSide />
@@ -47,7 +46,11 @@ export const Header = (props: HeaderProps) => {
                 <StyledLogo />
             </HeaderMid>
             <HeaderSide>
+                <Button onClick={() => {setLoginOpen(true)}}>Login</Button>
             </HeaderSide>
+            {loginOpen && <Modal onModalClose={() => setLoginOpen(false)}>
+                <LoginForm/>
+            </Modal>}
         </StyledHeader>
     )
 }

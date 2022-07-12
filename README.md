@@ -2,6 +2,22 @@
 
 WebStoor is a practice project made by me, to practice full-stack application development.
 
+## Project structure
+
+### Backend
+
+Backend webserver for the project written in Go(lang). 
+
+### Data
+
+Tools for maintaining data for the application.
+
+### Frontend
+
+Frontend React webserver for the project written in TypeScript.
+
+## Project goals
+
 The project will consist of the following components:
 * Go(lang) backend
 * React (TypeScript) frontend
